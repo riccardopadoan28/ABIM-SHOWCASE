@@ -1,7 +1,7 @@
 ---
 layout: splash
-title: ÅBIM - OpenBIM Web Application
-excerpt: "4D/5D Project Management Platform for the AEC industry"
+title: ÅBIM - OpenBIM Web Application to support IFC Project Management
+excerpt: "Streamline BIM workflows with integrated IDS auditor, BCF exporter, 3D visualization, 4D scheduling, 5D cost estimation and resource allocation for the AEC industry"
 header:
   overlay_color: "#000"
   overlay_filter: "0.5"
@@ -10,6 +10,6 @@ header:
 
 {% include hero-section.html %}
 
-{% include video-demo.html %}
-
 {% include technical-abstract.html %}
+
+{% include video-demo.html %}
