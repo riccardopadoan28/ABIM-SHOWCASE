@@ -5,7 +5,7 @@ url: "https://riccardopadoan28.github.io"
 
 # Minimal Mistakes Theme
 remote_theme: mmistakes/minimal-mistakes@4.26.2
-minimal_mistakes_skin: "contrast"
+minimal_mistakes_skin: "dirt"
 
 plugins:
   - jekyll-paginate
@@ -17,7 +17,6 @@ plugins:
 
 author:
   name: Riccardo Padoan
-  bio: "BIM & Construction Technology Specialist"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
