@@ -3,18 +3,39 @@ description: OpenBIM Web application for 4D and 5D Project Management
 baseurl: "/ABIM-SHOWCASE"
 url: "https://riccardopadoan28.github.io"
 
-theme: jekyll-theme-cayman
+# Minimal Mistakes Theme
+remote_theme: mmistakes/minimal-mistakes@4.26.2
+minimal_mistakes_skin: "default" # dark, contrast, neon, air, aqua, dark, default, dirt, mint, plum, sunrise
 
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
-  - jekyll-seo-tag
+  - jemoji
+  - jekyll-include-cache
 
-author: Riccardo Padoan
-github_username: riccardopadoan28
+author:
+  name: Riccardo Padoan
+  avatar: "/assets/images/profile.jpg"
+  bio: "BIM & Construction Technology Specialist"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/riccardopadoan28"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/riccardopadoan00/"
 
-# Custom
-social:
-  - platform: GitHub
-    url: https://github.com/riccardopadoan28/ABIM-SHOWCASE
-  - platform: LinkedIn
-    url: https://www.linkedin.com/in/riccardopadoan00/
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/riccardopadoan28"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/riccardopadoan00/"
+
+# Site Settings
+locale: "en-US"
+timezone: "Europe/Rome"
