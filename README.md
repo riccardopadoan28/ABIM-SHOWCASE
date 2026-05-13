@@ -24,10 +24,14 @@
 
 ## 🚀 Live Demo
 
-Explore ÅBIM in action:
-- [IFC Import & 3D Viewer Demo](https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/view?usp=drive_link)
-- [QTO, 4D Scheduling & 5D Cost Demo](https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/view?usp=drive_link)
-- [Gantt & Cash Flow Analysis Demo](https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view?usp=drive_link)
+### IFC Import & 3D Viewer
+<iframe src="https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/preview" width="320" height="180" allow="autoplay"></iframe>
+
+### QTO, 4D Scheduling & 5D Cost Estimation
+<iframe src="https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/preview" width="320" height="180" allow="autoplay"></iframe>
+
+### Gantt & Cash Flow Analysis
+<iframe src="https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/preview" width="320" height="180" allow="autoplay"></iframe>
 
 ## 👨‍💻 About the Developer
 
