@@ -1,3 +1,86 @@
+<style>
+  .hero {
+    background: linear-gradient(135deg, #0366d6 0%, #6f42c1 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin: 0 0 2rem 0;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+  
+  .conference-badge-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .badge:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .badge-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .badge strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .badge p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.95;
+  }
+  
+  .ec3-badge {
+    border-left: 4px solid #ffeb3b;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 0;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .badge {
+      max-width: 100%;
+    }
+  }
+</style>
+
 <section class="hero">
   <div class="hero-content">
     <p class="hero-subtitle">OpenBIM Web Application for 4D/5D Project Management</p>
@@ -9,6 +92,5 @@
         <p>2026 European Conference on Computing in Construction, Corfu, Greece, July 12–15, 2026</p>
       </div>
     </div>
-
   </div>
 </section>
