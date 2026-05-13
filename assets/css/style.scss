@@ -1,0 +1,372 @@
+---
+---
+
+// Dirt Theme Colors
+$dirt-primary: #5a4a42;
+$dirt-secondary: #8b7355;
+$dirt-accent: #f0e68c;
+$dirt-light: #f5f5f0;
+$dirt-dark: #3d342f;
+$text-primary: #333;
+$text-secondary: #666;
+$border-color: #ddd;
+
+// Typography
+$base-font-size: 16px;
+$base-line-height: 1.6;
+$heading-font-weight: 600;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  line-height: $base-line-height;
+  color: $text-primary;
+  background-color: #fff;
+  font-size: $base-font-size;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $heading-font-weight;
+  line-height: 1.25;
+  color: $dirt-primary;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid $dirt-accent;
+  padding-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: $text-secondary;
+}
+
+a {
+  color: $dirt-secondary;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: $dirt-primary;
+    text-decoration: underline;
+  }
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  background: linear-gradient(135deg, $dirt-primary 0%, $dirt-secondary 100%);
+  color: white;
+  padding: 3.5rem 1rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  margin: 0 0 2rem 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: $dirt-accent;
+  color: $dirt-primary;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border: 2px solid $dirt-accent;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    background: white;
+    text-decoration: none;
+  }
+}
+
+.conference-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 1.2rem;
+  margin-top: 2.5rem;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9rem;
+}
+
+.conference-badge strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 1px;
+}
+
+.conference-badge p {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* ========== VIDEO DEMO SECTION ========== */
+.video-demo-section {
+  padding: 3.5rem 0;
+  background: $dirt-light;
+  margin: 0;
+}
+
+.video-demo-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid $dirt-accent;
+  padding-bottom: 0.75rem;
+}
+
+.demo-subtitle {
+  text-align: center;
+  color: $text-secondary;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.video-card {
+  background: white;
+  border: 2px solid $dirt-secondary;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(139, 115, 85, 0.2);
+  border-color: $dirt-accent;
+}
+
+.video-card h3 {
+  background: linear-gradient(135deg, $dirt-primary 0%, $dirt-secondary 100%);
+  color: white;
+  padding: 1.2rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  border: none;
+}
+
+.video-container {
+  width: 100%;
+  padding: 1.2rem;
+  background: #f9f9f9;
+}
+
+.video-container iframe {
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  display: block;
+  width: 100%;
+}
+
+.video-description {
+  padding: 1.2rem;
+  color: $text-secondary;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========== ABSTRACT SECTION ========== */
+.abstract-section {
+  background: white;
+  padding: 3.5rem 0;
+  margin: 0;
+}
+
+.abstract-section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.abstract-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.abstract-card {
+  background: $dirt-light;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 1.8rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.abstract-card:hover {
+  transform: translateY(-6px);
+  background: linear-gradient(135deg, $dirt-primary 0%, $dirt-secondary 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(139, 115, 85, 0.2);
+  border-color: $dirt-accent;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.abstract-card h3 {
+  color: $dirt-secondary;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  border: none;
+}
+
+.abstract-card:hover h3 {
+  color: $dirt-accent;
+}
+
+.abstract-card p {
+  color: $text-secondary;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.abstract-card:hover p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: $dirt-secondary;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid $dirt-secondary;
+  
+  &:hover {
+    background: $dirt-primary;
+    border-color: $dirt-primary;
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-primary {
+  background: $dirt-secondary;
+  color: white;
+  
+  &:hover {
+    background: $dirt-primary;
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+  }
+  
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-container iframe {
+    height: 250px;
+  }
+  
+  .abstract-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .video-demo-section,
+  .abstract-section {
+    padding: 2.5rem 0;
+  }
+}
