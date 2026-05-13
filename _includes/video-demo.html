@@ -1,105 +1,136 @@
 <style>
-  .demo-section {
+  .video-demo-section {
     padding: 4rem 0;
-    background: #ffffff;
+    background: #f4f4f4;
+    margin: 2rem 0;
   }
   
-  .demo-section h2 {
+  .video-demo-section h2 {
     text-align: center;
     margin-bottom: 1rem;
+    color: #5a4a42;
+    border-bottom: 3px solid #8b7355;
+    padding-bottom: 1rem;
   }
   
-  .section-subtitle {
+  .demo-subtitle {
     text-align: center;
-    color: #606060;
+    color: #666;
     font-size: 1.1rem;
     margin-bottom: 3rem;
   }
   
-  .demo-grid {
+  .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
   }
   
-  .demo-card {
-    background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
-    border: 1px solid #d0d7de;
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
+  .video-card {
+    background: white;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
   
-  .demo-card:hover {
+  .video-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(3, 102, 214, 0.25);
-    border-color: #0366d6;
+    box-shadow: 0 12px 24px rgba(139, 115, 85, 0.25);
+    border-color: #a0826d;
   }
   
-  .demo-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-  
-  .demo-card h3 {
-    color: #0366d6;
-    margin: 1rem 0;
-    font-size: 1.1rem;
+  .video-card h3 {
+    background: linear-gradient(135deg, #5a4a42 0%, #8b7355 100%);
+    color: white;
+    padding: 1.5rem;
+    margin: 0;
+    font-size: 1.05rem;
     line-height: 1.4;
+    border: none;
   }
   
-  .demo-description {
-    color: #606060;
+  .video-container {
+    width: 100%;
+    padding: 1.5rem;
+    background: #fafafa;
+  }
+  
+  .video-container iframe {
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+  
+  .video-description {
+    padding: 1.5rem;
+    color: #666;
     font-size: 0.95rem;
     line-height: 1.6;
-    margin: 1rem 0 1.5rem 0;
-  }
-  
-  .btn-primary {
-    background: linear-gradient(135deg, #0366d6 0%, #0256c7 100%);
-    border: none;
-    font-weight: 600;
-  }
-  
-  .btn-primary:hover {
-    background: linear-gradient(135deg, #0256c7 0%, #014ba6 100%);
+    margin: 0;
   }
   
   @media (max-width: 768px) {
-    .demo-grid {
+    .video-demo-section {
+      padding: 2rem 0;
+    }
+    
+    .video-grid {
       grid-template-columns: 1fr;
+    }
+    
+    .video-container iframe {
+      height: 250px !important;
     }
   }
 </style>
 
-<section id="demo" class="demo-section">
-  <div class="container">
+<section id="demo" class="video-demo-section">
+  <div class="inner">
     <h2>Live Application Demo</h2>
-    <p class="section-subtitle">See ÅBIM Processing IFC Files in Real-Time</p>
+    <p class="demo-subtitle">See ÅBIM Processing IFC Files in Real-Time</p>
     
-    <div class="demo-grid">
-      <div class="demo-card">
-        <div class="demo-icon">🏗️</div>
+    <div class="video-grid">
+      <div class="video-card">
         <h3>IFC File Import, 3D Viewer, IDS Auditor, BCF Exporter</h3>
-        <p class="demo-description">Import IFC files, visualize in 3D, validate with IDS Auditor, and export issues in BCF format.</p>
-        <a href="https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/view?usp=drive_link" target="_blank" class="btn btn-primary">▶ Watch Video</a>
+        <div class="video-container">
+          <iframe 
+            src="https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/preview" 
+            width="100%" 
+            height="400" 
+            allow="autoplay"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-description">Import IFC files, visualize in 3D, validate with IDS Auditor, and export issues in BCF format.</p>
       </div>
       
-      <div class="demo-card">
-        <div class="demo-icon">📊</div>
-        <h3>QTO, 4D Scheduling, 5D Cost Estimation</h3>
-        <p class="demo-description">Automated quantity takeoffs, construction timeline integration, and budget management.</p>
-        <a href="https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/view?usp=drive_link" target="_blank" class="btn btn-primary">▶ Watch Video</a>
+      <div class="video-card">
+        <h3>QTO, 4D Scheduling, 5D Cost Estimation and Resource Allocation</h3>
+        <div class="video-container">
+          <iframe 
+            src="https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/preview" 
+            width="100%" 
+            height="400" 
+            allow="autoplay"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-description">Automated quantity takeoffs, construction timeline integration, and budget management.</p>
       </div>
       
-      <div class="demo-card">
-        <div class="demo-icon">📈</div>
+      <div class="video-card">
         <h3>Gantt and Cash Flow Analysis</h3>
-        <p class="demo-description">Visualize schedules, track dependencies, and monitor project finances in real-time.</p>
-        <a href="https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view?usp=drive_link" target="_blank" class="btn btn-primary">▶ Watch Video</a>
+        <div class="video-container">
+          <iframe 
+            src="https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/preview" 
+            width="100%" 
+            height="400" 
+            allow="autoplay"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-description">Visualize schedules, track dependencies, and monitor project finances in real-time.</p>
       </div>
     </div>
   </div>
