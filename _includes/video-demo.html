@@ -1,3 +1,52 @@
+<style>
+  .demo-section {
+    padding: 60px 0;
+    margin: 40px 0;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+  }
+  
+  .demo-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .demo-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+  }
+  
+  .demo-card h3 {
+    background: linear-gradient(135deg, #1e90ff 0%, #0366d6 100%);
+    color: white;
+    padding: 15px;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .demo-card video {
+    width: 100%;
+    display: block;
+    background: #000;
+  }
+</style>
+
 <section id="demo" class="demo-section">
   <h2>Live Application Demo</h2>
   <p class="section-subtitle">See ÅBIM Processing IFC Files in Real-Time</p>
@@ -13,7 +62,7 @@
     
     <div class="demo-card">
       <h3>QTO, 4D Scheduling, 5D Cost Estimation and Resource Allocation</h3>
-      <video width="600%" height="400" controls style="background: #000;">
+      <video width="60%" height="400" controls style="background: #000;">
         <source src="{{ site.baseurl }}/assets/videos/ABIM_2.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -21,7 +70,7 @@
     
     <div class="demo-card">
       <h3>Gantt and Cash Flow Analysis</h3>
-      <video width="600%" height="400" controls style="background: #000;">
+      <video width="60%" height="400" controls style="background: #000;">
         <source src="{{ site.baseurl }}/assets/videos/ABIM_3.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
