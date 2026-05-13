@@ -25,25 +25,24 @@
 ## 🚀 Live Demo
 
 ### IFC Import & 3D Viewer
-<iframe src="https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/preview" width="320" height="180" allow="autoplay"></iframe>
+[![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Video-0366d6?style=for-the-badge)](https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/view?usp=drive_link)
 
 ### QTO, 4D Scheduling & 5D Cost Estimation
-<iframe src="https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/preview" width="320" height="180" allow="autoplay"></iframe>
+[![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Video-0366d6?style=for-the-badge)](https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/view?usp=drive_link)
 
 ### Gantt & Cash Flow Analysis
-<iframe src="https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/preview" width="320" height="180" allow="autoplay"></iframe>
+[![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Video-0366d6?style=for-the-badge)](https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view?usp=drive_link)
 
 ## 👨‍💻 About the Developer
 
-**Riccardo Padoan** - BIM & Construction Technology Specialist
+**Riccardo Padoan**
 
-- 🔗 [GitHub](https://github.com/riccardopadoan28)
+- 📩 [E-mail](mailto:riccardopadoan28@gmail.com)
 - 💼 [LinkedIn](https://www.linkedin.com/in/riccardopadoan00/)
 
 ## 📄 License
 
-This project is licensed under the **Demonstration-Only Proprietary License (DoPL)**.  
-See the LICENSE file for complete terms and conditions.
+This project is licensed under the **Demonstration-Only Proprietary License (DoPL)**.
 
 ---
 
