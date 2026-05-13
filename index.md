@@ -9,8 +9,8 @@ header:
   
 ---
 
-{% include hero-section.html %}
-
 {% include technical-abstract.html %}
 
 {% include video-demo.html %}
+
+{% include hero-section.html %}
