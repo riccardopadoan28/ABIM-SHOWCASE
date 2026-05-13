@@ -3,12 +3,13 @@ description: 4D/5D Automation Platform for Project Management
 baseurl: "/ABIM-SHOWCASE"
 url: "https://riccardopadoan28.github.io"
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-author: Riccardo padoan
+author: Riccardo Padoan
 github_username: riccardopadoan28
 
 # Custom

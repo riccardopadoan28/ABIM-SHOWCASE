@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.2"
 gem "github-pages", group: :jekyll_plugins
-
-# Other dependencies can be added below as needed.
+gem "jekyll-theme-cayman"
+gem "jekyll-feed", "~> 0.12"
+gem "jekyll-seo-tag"
