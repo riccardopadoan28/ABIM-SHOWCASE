@@ -2,95 +2,100 @@
   .hero {
     background: linear-gradient(135deg, #0366d6 0%, #6f42c1 100%);
     color: white;
-    padding: 4rem 0;
+    padding: 6rem 1rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
   
   .hero-content {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.2;
   }
   
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 0 0 2rem 0;
     font-weight: 300;
-    letter-spacing: 0.5px;
+    opacity: 0.95;
   }
   
-  .conference-badge-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+  .hero-cta {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: white;
+    color: #0366d6;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
   }
   
-  .badge {
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .conference-badge {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     padding: 1.5rem;
-    max-width: 400px;
+    margin-top: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
   }
   
-  .badge:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-  }
-  
-  .badge-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .badge strong {
+  .conference-badge strong {
     display: block;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
   }
   
-  .badge p {
+  .conference-badge p {
     margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    opacity: 0.95;
-  }
-  
-  .ec3-badge {
-    border-left: 4px solid #ffeb3b;
+    opacity: 0.9;
   }
   
   @media (max-width: 768px) {
     .hero {
-      padding: 2rem 0;
+      padding: 4rem 1rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.2rem;
     }
     
     .hero-subtitle {
       font-size: 1.1rem;
     }
     
-    .badge {
-      max-width: 100%;
+    .hero-cta {
+      display: block;
+      margin: 0.5rem auto;
     }
   }
 </style>
 
 <section class="hero">
   <div class="hero-content">
-    <p class="hero-subtitle">OpenBIM Web Application for 4D/5D Project Management</p>
-
-    <div class="conference-badge-container">
-      <div class="badge ec3-badge">
-        <span class="badge-icon">🎓</span>
-        <strong>Accepted Paper</strong>
-        <p>2026 European Conference on Computing in Construction, Corfu, Greece, July 12–15, 2026</p>
-      </div>
+    <h1>ÅBIM</h1>
+    <p class="hero-subtitle">OpenBIM Platform for 4D/5D Project Management</p>
+    <a href="#demo" class="hero-cta">Watch Demo</a>
+    
+    <div class="conference-badge">
+      <strong>🎓 Accepted Paper</strong>
+      <p>2026 European Conference on Computing in Construction (EC³)<br>Corfu, Greece | July 12–15, 2026</p>
     </div>
   </div>
 </section>

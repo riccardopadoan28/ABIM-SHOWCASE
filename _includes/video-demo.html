@@ -1,96 +1,105 @@
 <style>
   .demo-section {
-    padding: 60px 0;
-    margin: 40px 0;
+    padding: 4rem 0;
+    background: #ffffff;
+  }
+  
+  .demo-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
   }
   
   .section-subtitle {
     text-align: center;
-    color: #666;
+    color: #606060;
     font-size: 1.1rem;
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
   }
   
   .demo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
   
   .demo-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(135deg, #f6f8fa 0%, #ffffff 100%);
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
   
   .demo-card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    transform: translateY(-4px);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(3, 102, 214, 0.25);
+    border-color: #0366d6;
+  }
+  
+  .demo-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
   }
   
   .demo-card h3 {
-    background: linear-gradient(135deg, #1e90ff 0%, #0366d6 100%);
-    color: white;
-    padding: 15px;
-    margin: 0;
-    font-size: 1rem;
+    color: #0366d6;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
   }
   
-  .demo-card video {
-    width: 100%;
-    display: block;
-    background: #000;
+  .demo-description {
+    color: #606060;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 1rem 0 1.5rem 0;
   }
   
-  .video-link {
-    display: block;
-    padding: 15px;
-    text-align: center;
+  .btn-primary {
+    background: linear-gradient(135deg, #0366d6 0%, #0256c7 100%);
+    border: none;
+    font-weight: 600;
   }
   
-  .video-link a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0366d6;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #0256c7 0%, #014ba6 100%);
   }
   
-  .video-link a:hover {
-    background-color: #0256c7;
+  @media (max-width: 768px) {
+    .demo-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
 <section id="demo" class="demo-section">
-  <h2>Live Application Demo</h2>
-  <p class="section-subtitle">See ÅBIM Processing IFC Files in Real-Time</p>
-  
-  <div class="demo-grid">
-    <div class="demo-card">
-      <h3>IFC File Import, 3D Viewer, IDS Auditor, BCF Exporter</h3>
-      <div class="video-link">
-        <a href="https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/view?usp=drive_link" target="_blank">▶ Watch Video</a>
-      </div>
-    </div>
+  <div class="container">
+    <h2>Live Application Demo</h2>
+    <p class="section-subtitle">See ÅBIM Processing IFC Files in Real-Time</p>
     
-    <div class="demo-card">
-      <h3>QTO, 4D Scheduling, 5D Cost Estimation and Resource Allocation</h3>
-      <div class="video-link">
-        <a href="https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/view?usp=drive_link" target="_blank">▶ Watch Video</a>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="demo-icon">🏗️</div>
+        <h3>IFC File Import, 3D Viewer, IDS Auditor, BCF Exporter</h3>
+        <p class="demo-description">Import IFC files, visualize in 3D, validate with IDS Auditor, and export issues in BCF format.</p>
+        <a href="https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/view?usp=drive_link" target="_blank" class="btn btn-primary">▶ Watch Video</a>
       </div>
-    </div>
-    
-    <div class="demo-card">
-      <h3>Gantt and Cash Flow Analysis</h3>
-      <div class="video-link">
-        <a href="https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view?usp=drive_link" target="_blank">▶ Watch Video</a>
+      
+      <div class="demo-card">
+        <div class="demo-icon">📊</div>
+        <h3>QTO, 4D Scheduling, 5D Cost Estimation</h3>
+        <p class="demo-description">Automated quantity takeoffs, construction timeline integration, and budget management.</p>
+        <a href="https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/view?usp=drive_link" target="_blank" class="btn btn-primary">▶ Watch Video</a>
+      </div>
+      
+      <div class="demo-card">
+        <div class="demo-icon">📈</div>
+        <h3>Gantt and Cash Flow Analysis</h3>
+        <p class="demo-description">Visualize schedules, track dependencies, and monitor project finances in real-time.</p>
+        <a href="https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view?usp=drive_link" target="_blank" class="btn btn-primary">▶ Watch Video</a>
       </div>
     </div>
   </div>
