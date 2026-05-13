@@ -1,0 +1,19 @@
+title: ÅBIM - OpenBIM Web Application
+description: 4D/5D Automation Platform for Project Management
+author: Riccardo Tommasini
+github: https://github.com/riccardopadoan28/ABIM-SHOWCASE
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# SEO & Social
+github_username: riccardopadoan28
+
+# Custom
+social:
+  - platform: GitHub
+    url: https://github.com/riccardopadoan28/ABIM-SHOWCASE
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/riccardopadoan00/
