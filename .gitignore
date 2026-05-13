@@ -1,2 +1,18 @@
+# Backup files
+*.bak
+*.swp
+*~
+
+# Build directory
+_site/
+.sass-cache/
+.jekyll-metadata
+
+# Gems
+Gemfile.lock
+
+# DS_Store (macOS)
+.DS_Store
+
+# Video tracking (opzionale - se vuoi caricare i video)
 *.mp4
-!assets/videos/*.mp4

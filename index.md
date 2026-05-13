@@ -15,11 +15,3 @@ for automated 4D/5D project management workflows.
 
 ### Repository
 - **GitHub**: [ABIM-SHOWCASE](https://github.com/riccardopadoan28/ABIM-SHOWCASE)
-
-
-### Key Features
-✅ Automated IFC file parsing  
-✅ 4D Schedule Integration  
-✅ 5D Cost Analysis  
-✅ Real-time Visualization  
-✅ Open-BIM Framework Compliant
