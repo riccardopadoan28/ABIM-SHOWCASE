@@ -17,7 +17,6 @@ plugins:
 
 author:
   name: Riccardo Padoan
-  avatar: "/assets/images/profile.jpg"
   bio: "BIM & Construction Technology Specialist"
   links:
     - label: "GitHub"
