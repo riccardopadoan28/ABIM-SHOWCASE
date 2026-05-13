@@ -1,56 +1,40 @@
-# ABIM SHOWCASE
+# ABIM Showcase Site
 
-A Streamlit application to manage IFC models supporting validation, visualization, 4D and 5D workflow.
-Tools:
-- IFC Export Settings
-- 3D Model Viewer
-- IDS Validator
-- BCF Exporter
-- Properties and Quantity Extraction
-- 4D Scheduling
-- 5D Cost estimation
-- 5D Resource Allocation
+This repository contains the source code for the ABIM Showcase website, built using GitHub Pages and Jekyll. The site serves as a platform to showcase the ABIM Showcase application, providing information and resources related to its features and usage.
 
----
+## Project Structure
 
-## 🔒 Data Privacy & Security
+The project is organized as follows:
 
-**Your IFC files are handled with complete privacy and security.**
+- **_config.yml**: Configuration settings for the GitHub Pages site, including theme settings and site-wide options.
+- **Gemfile**: Specifies the Ruby gems required for the project, including Jekyll and other dependencies.
+- **.gitignore**: Lists files and directories to be ignored by Git, such as temporary files and build artifacts.
+- **index.md**: The main landing page of the website, containing introductory content and links to other sections.
+- **_layouts/default.html**: Defines the default layout for the pages, including HTML structure and references to stylesheets and scripts.
+- **_includes/head.html**: Contains the head section of the HTML, including meta tags and links to stylesheets.
+- **assets/css/style.css**: Custom CSS styles for the website.
+- **_posts/2026-01-01-welcome.md**: A sample blog post written in Markdown, including metadata and content.
+- **README.md**: Documentation for the project, including setup and usage instructions.
+- **.github/workflows/pages.yml**: Defines the GitHub Actions workflow for deploying the site to GitHub Pages.
 
-This application processes IFC files entirely within **temporary session storage**. All operations are performed in-memory during your active session:
+## Setup Instructions
 
-- **No permanent storage** - Your IFC files are never saved to any database or persistent storage
-- **No data collection** - No information from your models is collected, stored, or transmitted to external services
-- **Session-based processing** - All data is cleared when you close the application or end your session
-- **Local execution** - The application runs entirely on your local machine
-- **No commercial use of your data** - Your models and data are not used for any personal or commercial purposes
+To set up the project locally, follow these steps:
 
-**Your intellectual property remains completely yours.** This tool is designed purely as a workflow assistant, respecting the confidentiality of your projects.
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required gems by running `bundle install`.
+4. Serve the site locally using `bundle exec jekyll serve`.
+5. Open your web browser and go to `http://localhost:4000` to view the site.
 
----
+## Usage
 
-# License
+This site is intended to provide information about the ABIM Showcase application. You can add new content by creating new Markdown files in the `_posts` directory or by editing the `index.md` file.
 
-The contents of this repository are protected under the:
+## Contributing
 
-**Demonstration-Only Proprietary License (DoPL)**  
-➡️ *Use, copying, modification, redistribution, or incorporation of this code is strictly prohibited.*
+Contributions are welcome! If you have suggestions or improvements, please submit a pull request.
 
-Public access to this repository **does not** grant any license, permission, or rights to use the software beyond viewing it as published for demonstration purposes.
+## License
 
-See the [`LICENSE`](./LICENSE) file for the full terms.
-
-## ⚠️ Important Notice
-
-This project is **not open-source**.  
-Unauthorized use of the software may result in legal action, including but not limited to copyright infringement claims.
-
-# 📫 Contact
-
-For inquiries regarding this project, demonstrations, or collaborations, feel free to reach out:
-
-**Riccardo Padoan**  
-📧 [riccardo.padoan00@gmail.com](mailto:riccardo.padoan00@gmail.com)
-
-
-
+This project is licensed under the terms of the Demonstration-Only Proprietary License (DoPL). Please refer to the LICENSE file for more details.
