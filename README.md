@@ -1,40 +1,46 @@
-# ABIM Showcase Site
+# ÅBIM - OpenBIM Web Application
 
-This repository contains the source code for the ABIM Showcase website, built using GitHub Pages and Jekyll. The site serves as a platform to showcase the ABIM Showcase application, providing information and resources related to its features and usage.
+**4D/5D Project Management Platform for the Construction Industry**
 
-## Project Structure
+ÅBIM is an advanced web-based application designed to streamline Building Information Modeling (BIM) workflows. It integrates IFC file processing, 3D visualization, quantity takeoffs, scheduling, and cost estimation into a single, powerful platform.
 
-The project is organized as follows:
+## 🎯 Key Features
 
-- **_config.yml**: Configuration settings for the GitHub Pages site, including theme settings and site-wide options.
-- **Gemfile**: Specifies the Ruby gems required for the project, including Jekyll and other dependencies.
-- **.gitignore**: Lists files and directories to be ignored by Git, such as temporary files and build artifacts.
-- **index.md**: The main landing page of the website, containing introductory content and links to other sections.
-- **_layouts/default.html**: Defines the default layout for the pages, including HTML structure and references to stylesheets and scripts.
-- **_includes/head.html**: Contains the head section of the HTML, including meta tags and links to stylesheets.
-- **assets/css/style.css**: Custom CSS styles for the website.
-- **_posts/2026-01-01-welcome.md**: A sample blog post written in Markdown, including metadata and content.
-- **README.md**: Documentation for the project, including setup and usage instructions.
-- **.github/workflows/pages.yml**: Defines the GitHub Actions workflow for deploying the site to GitHub Pages.
+- **IFC File Import & 3D Viewer** - Load and visualize BIM models in real-time
+- **IDS Auditor** - Validate information requirements against project standards
+- **BCF Exporter** - Export issues and comments in BIM Collaboration Format
+- **Quantity Takeoff (QTO)** - Automated material and cost calculations
+- **4D Scheduling** - Integrate construction timelines with your BIM model
+- **5D Cost Estimation** - Link budget data directly to building components
+- **Resource Allocation** - Manage labor and equipment efficiently
+- **Gantt Charts** - Visualize project schedules and dependencies
+- **Cash Flow Analysis** - Monitor project finances in real-time
 
-## Setup Instructions
+## 🎓 Academic Recognition
 
-To set up the project locally, follow these steps:
+**Accepted Paper** - 2026 European Conference on Computing in Construction (EC³)
+- *Corfu, Greece | July 12–15, 2026*
+- Peer-reviewed publication showcasing innovative OpenBIM methodologies
 
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Install the required gems by running `bundle install`.
-4. Serve the site locally using `bundle exec jekyll serve`.
-5. Open your web browser and go to `http://localhost:4000` to view the site.
+## 🚀 Live Demo
 
-## Usage
+Explore ÅBIM in action:
+- [IFC Import & 3D Viewer Demo](https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/view?usp=drive_link)
+- [QTO, 4D Scheduling & 5D Cost Demo](https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/view?usp=drive_link)
+- [Gantt & Cash Flow Analysis Demo](https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view?usp=drive_link)
 
-This site is intended to provide information about the ABIM Showcase application. You can add new content by creating new Markdown files in the `_posts` directory or by editing the `index.md` file.
+## 👨‍💻 About the Developer
 
-## Contributing
+**Riccardo Padoan** - BIM & Construction Technology Specialist
 
-Contributions are welcome! If you have suggestions or improvements, please submit a pull request.
+- 🔗 [GitHub](https://github.com/riccardopadoan28)
+- 💼 [LinkedIn](https://www.linkedin.com/in/riccardopadoan00/)
 
-## License
+## 📄 License
 
-This project is licensed under the terms of the Demonstration-Only Proprietary License (DoPL). Please refer to the LICENSE file for more details.
+This project is licensed under the **Demonstration-Only Proprietary License (DoPL)**.  
+See the LICENSE file for complete terms and conditions.
+
+---
+
+*Built with Jekyll & GitHub Pages | Theme: Cayman*
