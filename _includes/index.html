@@ -1,0 +1,364 @@
+
+<h2 class="sr-only">Redesign proposto per il sito ÅBIM Showcase — portfolio AEC tech per recruiter</h2>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --c-ink: #0f1a14;
+  --c-paper: #f7f5f0;
+  --c-accent: #1D9E75;
+  --c-accent-dim: #E1F5EE;
+  --c-mid: #444441;
+  --c-rule: rgba(0,0,0,0.1);
+  --mono: 'DM Mono', 'Courier New', monospace;
+  --sans: 'Sora', system-ui, sans-serif;
+}
+body { font-family: var(--sans); background: var(--c-paper); color: var(--c-ink); }
+
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; border-bottom: 1px solid var(--c-rule);
+  background: var(--c-paper); position: sticky; top: 0; z-index: 10;
+}
+.nav-logo { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: var(--c-ink); }
+.nav-logo span { color: var(--c-accent); }
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a { font-size: 13px; color: var(--c-mid); text-decoration: none; }
+.nav-cta {
+  font-size: 13px; font-weight: 500; background: var(--c-ink); color: var(--c-paper);
+  padding: 6px 14px; border-radius: 4px; text-decoration: none;
+}
+
+.hero {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  min-height: 420px; border-bottom: 1px solid var(--c-rule);
+}
+.hero-left {
+  padding: 3rem 2rem; border-right: 1px solid var(--c-rule);
+  display: flex; flex-direction: column; justify-content: center; gap: 1.25rem;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 11px; color: var(--c-accent);
+  background: var(--c-accent-dim); padding: 4px 10px; border-radius: 2px;
+  width: fit-content;
+}
+.hero-title {
+  font-size: 42px; font-weight: 800; line-height: 1.05;
+  letter-spacing: -0.03em; color: var(--c-ink);
+}
+.hero-title em { font-style: normal; color: var(--c-accent); }
+.hero-desc { font-size: 15px; color: var(--c-mid); line-height: 1.6; max-width: 400px; }
+.hero-actions { display: flex; gap: 10px; margin-top: 0.5rem; }
+.btn-primary {
+  font-size: 13px; font-weight: 500; background: var(--c-ink); color: var(--c-paper);
+  padding: 9px 18px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer;
+}
+.btn-ghost {
+  font-size: 13px; font-weight: 500; background: transparent; color: var(--c-ink);
+  padding: 9px 18px; border-radius: 4px; border: 1px solid var(--c-rule); cursor: pointer;
+}
+.hero-right {
+  padding: 2rem; background: #0f1a14; display: flex; flex-direction: column; justify-content: center;
+}
+.code-block {
+  font-family: var(--mono); font-size: 12px; line-height: 1.8; color: #a3c9b3;
+}
+.code-block .cm { color: #4a7a5c; }
+.code-block .ck { color: #7fd1a8; }
+.code-block .cv { color: #c3e8d0; }
+.code-block .cn { color: #e2f5eb; font-weight: 500; }
+.code-tag { font-family: var(--mono); font-size: 10px; color: #4a7a5c; margin-bottom: 12px; }
+
+.stats-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--c-rule);
+}
+.stat-item {
+  padding: 1.25rem 2rem; border-right: 1px solid var(--c-rule);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.stat-item:last-child { border-right: none; }
+.stat-num { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; color: var(--c-ink); }
+.stat-label { font-family: var(--mono); font-size: 11px; color: var(--c-mid); }
+
+.section { padding: 2.5rem 2rem; border-bottom: 1px solid var(--c-rule); }
+.section-header {
+  display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem;
+}
+.section-title { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+.section-num { font-family: var(--mono); font-size: 11px; color: var(--c-accent); }
+
+.modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--c-rule); }
+.module-card {
+  background: var(--c-paper); padding: 1.25rem 1.5rem;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.module-icon { font-size: 20px; color: var(--c-accent); }
+.module-name { font-size: 14px; font-weight: 600; color: var(--c-ink); }
+.module-ifc { font-family: var(--mono); font-size: 11px; color: var(--c-accent); }
+.module-desc { font-size: 13px; color: var(--c-mid); line-height: 1.5; }
+
+.demo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.demo-card {
+  border: 1px solid var(--c-rule); border-radius: 4px; overflow: hidden;
+}
+.demo-thumb {
+  height: 120px; background: #0f1a14; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: 8px; cursor: pointer;
+}
+.demo-play {
+  width: 40px; height: 40px; border-radius: 50%; background: rgba(29,158,117,0.2);
+  border: 1px solid var(--c-accent); display: flex; align-items: center; justify-content: center;
+}
+.demo-play-icon { color: var(--c-accent); font-size: 18px; }
+.demo-label { font-family: var(--mono); font-size: 10px; color: #4a7a5c; }
+.demo-info { padding: 0.75rem 1rem; }
+.demo-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.demo-desc { font-size: 12px; color: var(--c-mid); line-height: 1.4; }
+
+.paper-card {
+  border: 1px solid var(--c-accent); border-radius: 4px;
+  padding: 1.5rem; background: var(--c-accent-dim);
+  display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start;
+}
+.paper-badge {
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  background: var(--c-accent); color: white;
+  padding: 4px 10px; border-radius: 2px; white-space: nowrap;
+}
+.paper-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+.paper-authors { font-size: 13px; color: var(--c-mid); margin-bottom: 4px; }
+.paper-venue { font-family: var(--mono); font-size: 11px; color: var(--c-accent); }
+
+.stack-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.stack-pill {
+  font-family: var(--mono); font-size: 12px;
+  padding: 4px 12px; border: 1px solid var(--c-rule); border-radius: 2px;
+  color: var(--c-mid); background: white;
+}
+.stack-pill.core { border-color: var(--c-accent); color: var(--c-accent); }
+
+.gap-card {
+  border-left: 3px solid var(--c-accent); padding: 1rem 1.25rem;
+  background: white; margin-bottom: 8px; border-radius: 0 4px 4px 0;
+}
+.gap-label { font-family: var(--mono); font-size: 10px; color: var(--c-accent); margin-bottom: 4px; }
+.gap-text { font-size: 14px; line-height: 1.5; color: var(--c-ink); }
+
+footer {
+  padding: 1.5rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-brand { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+.footer-links { display: flex; gap: 1rem; }
+.footer-links a { font-size: 13px; color: var(--c-mid); text-decoration: none; }
+.footer-credit { font-family: var(--mono); font-size: 11px; color: var(--c-mid); }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<nav>
+  <div class="nav-logo">Å<span>BIM</span></div>
+  <div class="nav-links">
+    <a href="#">Overview</a>
+    <a href="#">Modules</a>
+    <a href="#">Demo</a>
+    <a href="#">Research</a>
+  </div>
+  <a class="nav-cta" href="#">GitHub ↗</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <i class="ti ti-certificate" aria-hidden="true"></i>
+      EC³ 2026 · Accepted Paper
+    </div>
+    <h1 class="hero-title">IFC as the<br><em>single source</em><br>of truth</h1>
+    <p class="hero-desc">
+      ÅBIM is an open-source framework that writes 4D scheduling, 5D cost estimation,
+      and resource allocation <em>natively into the IFC schema</em> — no proprietary tools, no data fragmentation.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary">Watch demo</button>
+      <button class="btn-ghost">Read the paper ↗</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="code-tag">// IfcOpenShell · actual framework code</div>
+    <div class="code-block">
+      <span class="cm"># Create work schedule in IFC</span><br>
+      <span class="ck">work_plan</span> = <span class="cv">ifcopenshell.api</span>.run(<br>
+      &nbsp;&nbsp;<span class="cn">"sequence.add_work_plan"</span>,<br>
+      &nbsp;&nbsp;model, name=<span class="cn">"Construction WP"</span><br>
+      )<br><br>
+      <span class="cm"># Link cost items to geometry</span><br>
+      <span class="ck">cost_item</span> = <span class="cv">ifcopenshell.api</span>.run(<br>
+      &nbsp;&nbsp;<span class="cn">"cost.add_cost_item"</span>,<br>
+      &nbsp;&nbsp;model, cost_schedule=schedule<br>
+      )<br><br>
+      <span class="ck">control</span>.<span class="cv">assign_control</span>(<br>
+      &nbsp;&nbsp;model, relating_control=<span class="ck">cost_item</span>,<br>
+      &nbsp;&nbsp;related_object=<span class="ck">ifc_element</span><br>
+      )<br><br>
+      <span class="cm"># All data lives in the .ifc file ✓</span>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">7</div>
+    <div class="stat-label">IFC domains integrated</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">4D+5D</div>
+    <div class="stat-label">Scheduling + cost in one pipeline</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">EC³</div>
+    <div class="stat-label">Peer-reviewed · Corfu 2026</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Open-source stack</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Modules</h2>
+  </div>
+  <div class="modules-grid">
+    <div class="module-card">
+      <i class="ti ti-cube module-icon" aria-hidden="true"></i>
+      <div class="module-name">3D IFC Viewer</div>
+      <div class="module-ifc">ThatOpen Engine · WebAssembly</div>
+      <div class="module-desc">Browser-native rendering via WASM + Three.js. No external BIM viewer required.</div>
+    </div>
+    <div class="module-card">
+      <i class="ti ti-checkbox module-icon" aria-hidden="true"></i>
+      <div class="module-name">IDS Auditor</div>
+      <div class="module-ifc">IfcTester · XML validation</div>
+      <div class="module-desc">Automated compliance checks. Non-compliant elements exported as .bcfzip.</div>
+    </div>
+    <div class="module-card">
+      <i class="ti ti-chart-gantt module-icon" aria-hidden="true"></i>
+      <div class="module-name">4D Scheduling</div>
+      <div class="module-ifc">IfcWorkPlan · IfcTask · IfcRelSequence</div>
+      <div class="module-desc">CPM + PERT analysis written programmatically into the IFC schema.</div>
+    </div>
+    <div class="module-card">
+      <i class="ti ti-calculator module-icon" aria-hidden="true"></i>
+      <div class="module-name">5D Cost Estimation</div>
+      <div class="module-ifc">IfcCostSchedule · IfcCostItem</div>
+      <div class="module-desc">QTO → fuzzy price list matching → BoQ. Materials, equipment, and labour.</div>
+    </div>
+    <div class="module-card">
+      <i class="ti ti-users module-icon" aria-hidden="true"></i>
+      <div class="module-name">Resource Allocation</div>
+      <div class="module-ifc">IfcCrewResource · IfcLaborResource</div>
+      <div class="module-desc">Multi-dimensional resource arrays linked to tasks. Spatial-temporal overlap detection.</div>
+    </div>
+    <div class="module-card">
+      <i class="ti ti-trending-up module-icon" aria-hidden="true"></i>
+      <div class="module-name">Cash Flow Analysis</div>
+      <div class="module-ifc">Plotly · Pandas aggregation</div>
+      <div class="module-desc">Costs distributed proportionally across task durations. Liquidity gap detection.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Live demo</h2>
+  </div>
+  <div class="demo-grid">
+    <div class="demo-card">
+      <a href="https://drive.google.com/file/d/1WY8_Oiq-6LDbX3ckgpDReq56-EBziAJ4/view" target="_blank" style="text-decoration:none">
+        <div class="demo-thumb">
+          <div class="demo-play"><i class="ti ti-player-play demo-play-icon" aria-hidden="true"></i></div>
+          <div class="demo-label">watch demo ↗</div>
+        </div>
+      </a>
+      <div class="demo-info">
+        <div class="demo-title">IFC Import & 3D Viewer</div>
+        <div class="demo-desc">Load IFC, visualize model, validate with IDS, export BCF issues</div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <a href="https://drive.google.com/file/d/1MV1SRTIMlINiMYhScjQdRXeEjUwgZTYB/view" target="_blank" style="text-decoration:none">
+        <div class="demo-thumb">
+          <div class="demo-play"><i class="ti ti-player-play demo-play-icon" aria-hidden="true"></i></div>
+          <div class="demo-label">watch demo ↗</div>
+        </div>
+      </a>
+      <div class="demo-info">
+        <div class="demo-title">QTO · 4D · 5D</div>
+        <div class="demo-desc">Quantity takeoff, scheduling, cost estimation and resource allocation</div>
+      </div>
+    </div>
+    <div class="demo-card">
+      <a href="https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view" target="_blank" style="text-decoration:none">
+        <div class="demo-thumb">
+          <div class="demo-play"><i class="ti ti-player-play demo-play-icon" aria-hidden="true"></i></div>
+          <div class="demo-label">watch demo ↗</div>
+        </div>
+      </a>
+      <div class="demo-info">
+        <div class="demo-title">Gantt & Cash Flow</div>
+        <div class="demo-desc">Project schedule, dependencies, financial forecasting and liquidity analysis</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Research Contribution</h2>
+  </div>
+  <div class="paper-card">
+    <div class="paper-badge">EC³ 2026</div>
+    <div>
+      <div class="paper-title">Project Management with IFC: Toward an Open-BIM Framework</div>
+      <div class="paper-authors">Padoan R. · Pinti L. · Karlshøj J. — University of Trento, Technical University of Denmark</div>
+      <div class="paper-venue">European Conference on Computing in Construction · Corfu, Greece · July 12–15, 2026</div>
+    </div>
+  </div>
+  <div style="margin-top: 1.25rem;">
+    <div class="gap-card">
+      <div class="gap-label">Abstract</div>
+      <div class="gap-text">Successful construction management relies on interoperability, accurate cost estimation and scheduling. While OpenBIM aims to standardize workflows, current industry practices still suffer from fragmented processes and data loss, due to proprietary silos and a lack of an automated and standardized process. This research proposes a computational framework to optimize 4D and 5D BIM workflows by enriching the IFC schema. Through IfcOpenShell, the methodology enhances a standardized environment for semantic validation through IDS and collaboration through BCF, facilitating the extraction of properties and quantities, project scheduling, cost estimation and resource allocation. Results indicate that an integrated OpenBIM framework using the Industry Foundation Class (IFC) as single source of truth suggests the potential to improve reliability. The contribution is a reproducible, opensource framework that overcomes limitations providing a robust methodology for multi-dimensional BIM management.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Stack</h2>
+  </div>
+  <div class="stack-row">
+    <span class="stack-pill core">Python 3.10+</span>
+    <span class="stack-pill core">IfcOpenShell 0.8.4</span>
+    <span class="stack-pill core">ThatOpen Engine</span>
+    <span class="stack-pill">Streamlit</span>
+    <span class="stack-pill">Pandas · NumPy</span>
+    <span class="stack-pill">Plotly</span>
+    <span class="stack-pill">Three.js · WebAssembly</span>
+    <span class="stack-pill">IDS / BCF</span>
+    <span class="stack-pill">difflib · SequenceMatcher</span>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">ÅBIM</div>
+  <div class="footer-links">
+    <a href="https://github.com/riccardopadoan28">GitHub</a>
+    <a href="https://www.linkedin.com/in/riccardopadoan00/">LinkedIn</a>
+  </div>
+  <div class="footer-credit">Riccardo Padoan · MSc Civil Engineering · University of Trento</div>
+</footer>
