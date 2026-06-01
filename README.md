@@ -42,5 +42,6 @@ This is a showcase repository (demo videos + documentation). The core applicatio
 ---
 ## Author
 **Riccardo Padoan** — MSc Civil Engineering, University of Trento · Erasmus+ at DTU  
-📩 [E-mail](mailto:riccardopadoan28@gmail.com)· 💼 [LinkedIn](https://www.linkedin.com/in/riccardopadoan00/)
+📩 [E-mail](mailto:riccardopadoan28@gmail.com)
+💼 [LinkedIn](https://www.linkedin.com/in/riccardopadoan00/)
 
