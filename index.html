@@ -161,6 +161,14 @@
     .footer-links a { font-size: 13px; color: var(--c-mid); text-decoration: none; }
     .footer-credit { font-family: var(--mono); font-size: 11px; color: var(--c-mid); }
 
+    .presentation-wrapper {
+      display: flex; justify-content: center; align-items: center;
+      width: 100%;
+    }
+    .presentation-wrapper iframe {
+      border: 1px solid var(--c-rule); border-radius: 4px;
+    }
+
     @media (max-width: 768px) {
       .hero { grid-template-columns: 1fr; }
       .hero-left { border-right: none; border-bottom: 1px solid var(--c-rule); }
@@ -336,8 +344,9 @@
     <span class="section-num">03</span>
     <h2 class="section-title">Presentation</h2>
   </div>
-  <div class="paper-card">
-  </div><iframe src="docs/presentation.pdf" width="60%" height="400"></iframe></div>
+  <div class="presentation-wrapper">
+    <iframe src="https://docs.google.com/presentation/d/1GDKiy7Dta3uinmiv_JggJiorb4EFSWsw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="80%" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+  </div>
 </div>
 
 <div class="section" id="research">

@@ -23,3 +23,6 @@ Thumbs.db
 # Node (se mai userai JS build tools)
 node_modules/
 package-lock.json
+
+#pdf
+*.pdf
