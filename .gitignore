@@ -3,16 +3,23 @@
 *.swp
 *~
 
-# Build directory
-_site/
-.sass-cache/
-.jekyll-metadata
-
-# Gems
-Gemfile.lock
-
-# DS_Store (macOS)
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
 
-# Video tracking (opzionale - se vuoi caricare i video)
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+Thumbs.db
+
+# Videos (opzionale - se non vuoi caricare file grandi)
 *.mp4
+*.mov
+
+# Node (se mai userai JS build tools)
+node_modules/
+package-lock.json
