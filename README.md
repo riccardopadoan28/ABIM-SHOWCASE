@@ -1,26 +1,51 @@
-# ÅBIM - OpenBIM Web Application
+ÅBIM — OpenBIM Web Application for 4D/5D Project Management
+> **Research project** · MSc Thesis · [EC³ 2026 Paper](https://ec3.conference) · Developed with [IfcOpenShell](https://ifcopenshell.org) + [ThatOpen Engine](https://thatopen.com)
+The AEC industry loses billions yearly to fragmented workflows: schedules in MS Project, costs in Excel, models in Revit — never talking to each other. ÅBIM proposes a different approach: using the IFC schema as the single source of truth for 4D scheduling, 5D cost estimation, and resource allocation — entirely within the OpenBIM ecosystem, without proprietary silos.
+---
+What it does
+Module	Description
+3D IFC Viewer	Browser-native rendering via WebAssembly + Three.js (ThatOpen Engine)
+IDS Auditor	Automated compliance checks against XML-based information requirements
+BCF Exporter	Issue tracking linked to IFC GlobalIds, exportable to any BIM authoring tool
+QTO + 5D Cost	Quantity extraction from `IfcElementQuantity` → fuzzy-matched to price lists → `IfcCostSchedule` written back into the model
+4D Scheduling	`IfcWorkPlan` / `IfcTask` / `IfcRelSequence` built programmatically via `ifcopenshell.api.sequence`
+PERT Analysis	Probabilistic duration estimation using beta distribution for CPM critical path
+Resource Allocation	`IfcCrewResource` / `IfcLaborResource` / `IfcConstructionEquipmentResource` linked to tasks
+Gantt + Cash Flow	Interactive Plotly charts; costs distributed proportionally across task durations
+---
+Demo
+IFC Import & 3D Viewer
+![Watch Demo](https://img.shields.io/badge/%E2%96%B6%20Watch%20Video-0366d6?style=for-the-badge)
+QTO · 4D Scheduling · 5D Cost Estimation
+![Watch Demo](https://img.shields.io/badge/%E2%96%B6%20Watch%20Video-0366d6?style=for-the-badge)
+Gantt & Cash Flow Analysis
+![Watch Demo](https://img.shields.io/badge/%E2%96%B6%20Watch%20Video-0366d6?style=for-the-badge)
+> 💡 *Screenshots/GIFs coming soon*
+---
+Technical stack
+```
+Python 3.10+  ·  IfcOpenShell 0.8.4  ·  Streamlit  ·  Pandas / NumPy
+ThatOpen Engine (Three.js + WASM)  ·  Plotly  ·  IDS / BCF  ·  Git
+```
+The framework operates in a decoupled architecture: IFC data is enriched programmatically and written back into the schema, independent of any authoring software. All scheduling, cost, and resource data live natively inside the IFC file — queryable, portable, and auditable.
+---
+Academic context
+📄 Accepted paper — EC³ 2026 (European Conference on Computing in Construction)  
+Corfu, Greece · July 12–15, 2026
+> *"Project Management with IFC: Toward an Open-BIM Framework"*  
+> Padoan R., Pinti L., Karlshøj J. — University of Trento + Technical University of Denmark
+The paper introduces the methodology behind ÅBIM and validates the framework against a real construction model, demonstrating automated 4D/5D enrichment of IFC entities with full traceability.
+---
+Research gap addressed
+Current tools treat IDS validation, scheduling, and cost estimation as isolated processes, consistently replaced by proprietary tools that fragment data and never write it back into the schema. ÅBIM demonstrates that `IfcWorkPlan`, `IfcCostSchedule`, and `IfcConstructionResource` can be synchronized in a single open-source pipeline — moving toward the "Total BIM" vision where the digital model is the primary contractual record.
+---
+Repository structure
+This is a showcase repository (demo videos + documentation). The core application is under a Demonstration-Only Proprietary License pending thesis submission.
+---
+Author
+Riccardo Padoan — MSc Civil Engineering, University of Trento · Erasmus+ at DTU  
+📩 [E-mail](mailto:riccardopadoan28@gmail.com)· 💼 [LinkedIn](https://www.linkedin.com/in/riccardopadoan00/)
 
-**4D/5D Project Management Platform for the Construction Industry**
-
-ÅBIM is an advanced web-based application designed to streamline Building Information Modeling (BIM) workflows. It integrates IFC file processing, 3D visualization, quantity takeoffs, scheduling, and cost estimation into a single, powerful platform.
-
-## 🎯 Key Features
-
-- **IFC File Import & 3D Viewer** - Load and visualize BIM models in real-time
-- **IDS Auditor** - Validate information requirements against project standards
-- **BCF Exporter** - Export issues and comments in BIM Collaboration Format
-- **Quantity Takeoff (QTO)** - Automated material and cost calculations
-- **4D Scheduling** - Integrate construction timelines with your BIM model
-- **5D Cost Estimation** - Link budget data directly to building components
-- **Resource Allocation** - Manage labor and equipment efficiently
-- **Gantt Charts** - Visualize project schedules and dependencies
-- **Cash Flow Analysis** - Monitor project finances in real-time
-
-## 🎓 Academic Recognition
-
-**Accepted Paper** - 2026 European Conference on Computing in Construction (EC³)
-- *Corfu, Greece | July 12–15, 2026*
-- Peer-reviewed publication showcasing innovative OpenBIM methodologies
 
 ## 🚀 Live Demo
 
@@ -32,18 +57,3 @@
 
 ### Gantt & Cash Flow Analysis
 [![Watch Demo](https://img.shields.io/badge/▶%20Watch%20Video-0366d6?style=for-the-badge)](https://drive.google.com/file/d/19p5jFV3pBzXSbQ2MJly8Dz6yZFaZS66c/view?usp=drive_link)
-
-## 👨‍💻 About the Developer
-
-**Riccardo Padoan**
-
-- 📩 [E-mail](mailto:riccardopadoan28@gmail.com)
-- 💼 [LinkedIn](https://www.linkedin.com/in/riccardopadoan00/)
-
-## 📄 License
-
-This project is licensed under the **Demonstration-Only Proprietary License (DoPL)**.
-
----
-
-*Built with Jekyll & GitHub Pages | Theme: Cayman*
