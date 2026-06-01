@@ -1,6 +1,6 @@
 # ÅBIM — OpenBIM Web Application for 4D/5D Project Management
 > **Research project** · MSc Thesis · EC³ 2026 Paper · Developed with [IfcOpenShell](https://ifcopenshell.org) + [ThatOpen Engine](https://thatopen.com)
-The AEC industry loses billions yearly to fragmented workflows: schedules in MS Project, costs in Excel, models in Revit — never talking to each other. ÅBIM proposes a different approach: using the IFC schema as the single source of truth for 4D scheduling, 5D cost estimation, and resource allocation — entirely within the OpenBIM ecosystem, without proprietary silos.
+> The AEC industry loses billions yearly to fragmented workflows: schedules in MS Project, costs in Excel, models in Revit — never talking to each other. ÅBIM proposes a different approach: using the IFC schema as the single source of truth for 4D scheduling, 5D cost estimation, and resource allocation — entirely within the OpenBIM ecosystem, without proprietary silos.
 ---
 ## What it does
 - 3D Viewer:	Browser-native rendering via WebAssembly + Three.js (ThatOpen Engine)
@@ -33,10 +33,10 @@ The framework operates in a decoupled architecture: IFC data is enriched program
 📄 Accepted paper — EC³ 2026 (European Conference on Computing in Construction) - Corfu, Greece · July 12–15, 2026
 > *"Project Management with IFC: Toward an Open-BIM Framework"*  
 > Padoan R., Pinti L., Karlshøj J. — University of Trento, Technical University of Denmark
-The paper introduces the methodology behind ÅBIM and validates the framework against a real construction model, demonstrating automated 4D/5D enrichment of IFC entities with full traceability.
----
-## Research gap addressed
-Current tools treat IDS validation, scheduling, and cost estimation as isolated processes, consistently replaced by proprietary tools that fragment data and never write it back into the schema. ÅBIM demonstrates that `IfcWorkPlan`, `IfcCostSchedule`, and `IfcConstructionResource` can be synchronized in a single open-source pipeline — moving toward the "Total BIM" vision where the digital model is the primary contractual record.
+> The paper introduces the methodology behind ÅBIM and validates the framework against a real construction model, demonstrating automated 4D/5D enrichment of IFC entities with full traceability.
+### Abstract: Successful construction management relies on interoperability,
+accurate cost estimation and scheduling. While OpenBIM aims to standardize workflows, current industry practices still suffer from fragmented processes and data loss, due to proprietary silos and a lack of an automated and standardized process. This research proposes a computational framework to optimize 4D and 5D BIM workflows by enriching the IFC schema. Through IfcOpenShell, the methodology enhances a standardized environment for semantic validation through IDS and collaboration through BCF, facilitating the extraction of properties and quantities, project scheduling, cost estimation and resource allocation. Results indicate that an integrated OpenBIM framework using the Industry Foundation Class
+(IFC) as single source of truth suggests the potential to improve reliability. The contribution is a reproducible, opensource framework that overcomes limitations providing a robust methodology for multi-dimensional BIM management.
 ---
 ## Repository structure
 This is a showcase repository (demo videos + documentation). The core application is under a Demonstration-Only Proprietary License pending thesis submission.
