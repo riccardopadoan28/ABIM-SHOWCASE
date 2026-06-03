@@ -105,23 +105,63 @@
     .module-ifc { font-family: var(--mono); font-size: 11px; color: var(--c-accent); }
     .module-desc { font-size: 13px; color: var(--c-mid); line-height: 1.5; }
 
-    .demo-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .demo-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr 1fr; 
+      gap: 1rem; 
+    }
     .demo-card {
-      border: 1px solid var(--c-rule); border-radius: 4px; overflow: hidden;
+      border: 1px solid var(--c-rule); 
+      border-radius: 4px; 
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .demo-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .demo-thumb {
-      height: 120px; background: #0f1a14; display: flex; align-items: center;
-      justify-content: center; flex-direction: column; gap: 8px; cursor: pointer;
+      height: 200px; 
+      background: #0f1a14; 
+      display: flex; 
+      align-items: center;
+      justify-content: center; 
+      flex-direction: column; 
+      gap: 8px; 
+      cursor: pointer;
     }
     .demo-play {
-      width: 40px; height: 40px; border-radius: 50%; background: rgba(29,158,117,0.2);
-      border: 1px solid var(--c-accent); display: flex; align-items: center; justify-content: center;
+      width: 50px; 
+      height: 50px; 
+      border-radius: 50%; 
+      background: rgba(29,158,117,0.2);
+      border: 1px solid var(--c-accent); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
     }
-    .demo-play-icon { color: var(--c-accent); font-size: 18px; }
-    .demo-label { font-family: var(--mono); font-size: 10px; color: #4a7a5c; }
-    .demo-info { padding: 0.75rem 1rem; }
-    .demo-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-    .demo-desc { font-size: 12px; color: var(--c-mid); line-height: 1.4; }
+    .demo-play-icon { 
+      color: var(--c-accent); 
+      font-size: 24px; 
+    }
+    .demo-label { 
+      font-family: var(--mono); 
+      font-size: 11px; 
+      color: #4a7a5c; 
+    }
+    .demo-info { 
+      padding: 1rem 1.25rem; 
+    }
+    .demo-title { 
+      font-size: 14px; 
+      font-weight: 600; 
+      margin-bottom: 6px; 
+    }
+    .demo-desc { 
+      font-size: 13px; 
+      color: var(--c-mid); 
+      line-height: 1.5; 
+    }
 
     .paper-card {
       border: 1px solid var(--c-accent); border-radius: 4px;
