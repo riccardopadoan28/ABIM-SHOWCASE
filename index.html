@@ -4,28 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ÅBIM · IFC as the single source of truth</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%231D9E75'>Å</text></svg>">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%230f7d61'>Å</text></svg>">
+  <meta name="description" content="ÅBIM: an open-source framework that writes 4D scheduling, 5D cost estimation and resource allocation natively into the IFC schema. EC³ 2026 paper.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --c-ink: #0f1a14;
-      --c-paper: #f7f5f0;
-      --c-accent: #1D9E75;
-      --c-accent-dim: #E1F5EE;
-      --c-mid: #444441;
-      --c-rule: rgba(0,0,0,0.1);
+      --c-ink: #0e1c17;
+      --c-deep: #0a1813;
+      --c-paper: #f8f6f1;
+      --c-surface: #ffffff;
+      --c-accent: #0f7d61;
+      --c-accent-2: #2fc795;
+      --c-accent-dim: #e3f3ec;
+      --c-mid: #56625d;
+      --c-rule: rgba(14,28,23,0.1);
+      --shadow: 0 12px 30px -14px rgba(14,28,23,0.3);
+      --radius: 10px;
       --mono: 'DM Mono', 'Courier New', monospace;
       --sans: 'Sora', system-ui, sans-serif;
     }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
     body { font-family: var(--sans); background: var(--c-paper); color: var(--c-ink); }
 
     nav {
       display: flex; justify-content: space-between; align-items: center;
       padding: 1rem 2rem; border-bottom: 1px solid var(--c-rule);
-      background: var(--c-paper); position: sticky; top: 0; z-index: 10;
+      background: rgba(248,246,241,0.85); backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 10;
     }
+    .nav-links a:hover { color: var(--c-accent); }
     .nav-logo { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; color: var(--c-ink); }
     .nav-logo span { color: var(--c-accent); }
     .nav-links { display: flex; gap: 1.5rem; }
@@ -40,67 +49,92 @@
       min-height: 420px; border-bottom: 1px solid var(--c-rule);
     }
     .hero-left {
-      padding: 3rem 2rem; border-right: 1px solid var(--c-rule);
+      padding: 3.5rem 2rem; border-right: 1px solid var(--c-rule);
+      background: radial-gradient(circle at 0% 100%, var(--c-accent-dim), transparent 60%);
       display: flex; flex-direction: column; justify-content: center; gap: 1.25rem;
     }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 6px;
       font-family: var(--mono); font-size: 11px; color: var(--c-accent);
-      background: var(--c-accent-dim); padding: 4px 10px; border-radius: 2px;
+      background: var(--c-accent-dim); padding: 4px 10px; border-radius: 999px;
       width: fit-content;
     }
     .hero-title {
-      font-size: 42px; font-weight: 800; line-height: 1.05;
+      font-size: 46px; font-weight: 800; line-height: 1.05;
       letter-spacing: -0.03em; color: var(--c-ink);
     }
-    .hero-title em { font-style: normal; color: var(--c-accent); }
+    .hero-title em {
+      font-style: normal; color: var(--c-accent);
+      background: linear-gradient(90deg, var(--c-accent), var(--c-accent-2));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
     .hero-desc { font-size: 15px; color: var(--c-mid); line-height: 1.6; max-width: 400px; }
     .hero-actions { display: flex; gap: 10px; margin-top: 0.5rem; }
     .btn-primary {
-      font-size: 13px; font-weight: 500; background: var(--c-ink); color: var(--c-paper);
-      padding: 9px 18px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer;
+      font-size: 13px; font-weight: 500; background: var(--c-accent); color: #fff;
+      padding: 9px 18px; border-radius: 6px; text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s;
     }
     .btn-ghost {
       font-size: 13px; font-weight: 500; background: transparent; color: var(--c-ink);
-      padding: 9px 18px; border-radius: 4px; border: 1px solid var(--c-rule); cursor: pointer;
+      padding: 9px 18px; border-radius: 6px; border: 1px solid var(--c-rule); cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
     }
+    .hero-actions { flex-wrap: wrap; }
+    .btn-primary, .btn-ghost { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-family: inherit; }
+    .btn-ghost:hover { border-color: var(--c-accent); color: var(--c-accent); }
+    .btn-primary:hover { background: var(--c-ink); }
     .hero-right {
-      padding: 2rem; background: #0f1a14; display: flex; flex-direction: column; justify-content: center;
+      padding: 2rem; min-width: 0; display: flex; flex-direction: column; justify-content: center;
+      background-color: var(--c-deep);
+      background-image: radial-gradient(circle at 85% 15%, rgba(47,199,149,0.18), transparent 45%),
+                        linear-gradient(rgba(47,199,149,0.06) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(47,199,149,0.06) 1px, transparent 1px);
+      background-size: auto, 24px 24px, 24px 24px;
     }
     .code-block {
-      font-family: var(--mono); font-size: 12px; line-height: 1.8; color: #a3c9b3;
+      font-family: var(--mono); font-size: 11px; line-height: 1.8; color: #a3c9b3;
+      white-space: pre; overflow-x: auto;
     }
-    .code-block .cm { color: #4a7a5c; }
-    .code-block .ck { color: #7fd1a8; }
-    .code-block .cv { color: #c3e8d0; }
-    .code-block .cn { color: #e2f5eb; font-weight: 500; }
-    .code-tag { font-family: var(--mono); font-size: 10px; color: #4a7a5c; margin-bottom: 12px; }
+    .code-block .cm { color: #5f8f78; }
+    .code-block .ck { color: var(--c-accent-2); }
+    .code-block .cv { color: #a8e6cf; }
+    .code-block .cn { color: #f1d9a6; font-weight: 500; }
+    .code-tag { font-family: var(--mono); font-size: 10px; color: #5f8f78; margin-bottom: 12px; }
 
     .stats-bar {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      border-bottom: 1px solid var(--c-rule);
+      border-bottom: 1px solid var(--c-rule); background: var(--c-surface);
     }
     .stat-item {
       padding: 1.25rem 2rem; border-right: 1px solid var(--c-rule);
       display: flex; flex-direction: column; gap: 4px;
     }
     .stat-item:last-child { border-right: none; }
-    .stat-num { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; color: var(--c-ink); }
+    .stat-num { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; color: var(--c-accent); }
     .stat-label { font-family: var(--mono); font-size: 11px; color: var(--c-mid); }
 
-    .section { padding: 2.5rem 2rem; border-bottom: 1px solid var(--c-rule); }
+    .section { padding: 3rem 2rem; border-bottom: 1px solid var(--c-rule); }
     .section-header {
-      display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem;
     }
-    .section-title { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
-    .section-num { font-family: var(--mono); font-size: 11px; color: var(--c-accent); }
+    .section-title { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+    .section-num {
+      font-family: var(--mono); font-size: 11px; color: var(--c-accent);
+      background: var(--c-accent-dim); padding: 3px 9px; border-radius: 999px;
+    }
 
-    .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--c-rule); }
+    .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
     .module-card {
-      background: var(--c-paper); padding: 1.25rem 1.5rem;
-      display: flex; flex-direction: column; gap: 8px;
+      background: var(--c-surface); padding: 1.5rem; border: 1px solid var(--c-rule);
+      border-radius: var(--radius); display: flex; flex-direction: column; gap: 8px;
     }
-    .module-icon { font-size: 20px; color: var(--c-accent); }
+    .module-card { transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .module-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--c-accent); }
+    .module-icon {
+      font-size: 20px; color: var(--c-accent); background: var(--c-accent-dim);
+      width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+    }
     .module-name { font-size: 14px; font-weight: 600; color: var(--c-ink); }
     .module-ifc { font-family: var(--mono); font-size: 11px; color: var(--c-accent); }
     .module-desc { font-size: 13px; color: var(--c-mid); line-height: 1.5; }
@@ -117,12 +151,16 @@
       transition: transform 0.2s, box-shadow 0.2s;
     }
     .demo-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
     }
+    .demo-card { border-radius: var(--radius); background: var(--c-surface); }
+    .demo-thumb .demo-play { border-color: var(--c-accent-2); transition: transform 0.2s; }
+    .demo-thumb .demo-play-icon { color: var(--c-accent-2); }
+    .demo-card:hover .demo-play { transform: scale(1.1); }
     .demo-thumb {
       height: 200px; 
-      background: #0f1a14; 
+      background: radial-gradient(circle at 50% 40%, #14402f, var(--c-deep) 70%); 
       display: flex; 
       align-items: center;
       justify-content: center; 
@@ -147,7 +185,7 @@
     .demo-label { 
       font-family: var(--mono); 
       font-size: 11px; 
-      color: #4a7a5c; 
+      color: #7fbfa5; 
     }
     .demo-info { 
       padding: 1rem 1.25rem; 
@@ -164,52 +202,70 @@
     }
 
     .paper-card {
-      border: 1px solid var(--c-accent); border-radius: 4px;
-      padding: 1.5rem; background: var(--c-accent-dim);
+      border: 1px solid rgba(15,125,97,0.3); border-radius: var(--radius);
+      padding: 1.75rem; background: linear-gradient(135deg, var(--c-accent-dim), var(--c-surface));
       display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start;
     }
     .paper-badge {
       font-family: var(--mono); font-size: 11px; font-weight: 500;
       background: var(--c-accent); color: white;
-      padding: 4px 10px; border-radius: 2px; white-space: nowrap;
+      padding: 4px 10px; border-radius: 999px; white-space: nowrap;
     }
     .paper-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
     .paper-authors { font-size: 13px; color: var(--c-mid); margin-bottom: 4px; }
     .paper-venue { font-family: var(--mono); font-size: 11px; color: var(--c-accent); }
+    .paper-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+    .paper-actions .btn-ghost { background: white; }
+    .paper-viewer {
+      max-width: 760px; margin: 1.5rem auto 0; border: 1px solid var(--c-rule);
+      border-radius: var(--radius); overflow: hidden; background: white; box-shadow: var(--shadow);
+    }
+    .paper-viewer object { display: block; width: 100%; height: 480px; }
+    .paper-fallback { padding: 2rem; font-size: 14px; color: var(--c-mid); }
+    .paper-fallback a { color: var(--c-accent); }
 
     .stack-row { display: flex; flex-wrap: wrap; gap: 8px; }
     .stack-pill {
       font-family: var(--mono); font-size: 12px;
-      padding: 4px 12px; border: 1px solid var(--c-rule); border-radius: 2px;
+      padding: 4px 12px; border: 1px solid var(--c-rule); border-radius: 999px;
       color: var(--c-mid); background: white;
     }
     .stack-pill.core { border-color: var(--c-accent); color: var(--c-accent); }
 
     .gap-card {
       border-left: 3px solid var(--c-accent); padding: 1rem 1.25rem;
-      background: white; margin-bottom: 8px; border-radius: 0 4px 4px 0;
+      background: white; margin-bottom: 8px; border-radius: 0 8px 8px 0;
     }
     .gap-label { font-family: var(--mono); font-size: 10px; color: var(--c-accent); margin-bottom: 4px; }
     .gap-text { font-size: 14px; line-height: 1.5; color: var(--c-ink); }
 
     footer {
-      padding: 1.5rem 2rem;
+      padding: 2rem; background: var(--c-deep); color: #e6efe9;
       display: flex; justify-content: space-between; align-items: center;
     }
     .footer-brand { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
     .footer-links { display: flex; gap: 1rem; }
-    .footer-links a { font-size: 13px; color: var(--c-mid); text-decoration: none; }
-    .footer-credit { font-family: var(--mono); font-size: 11px; color: var(--c-mid); }
+    .footer-links a { font-size: 13px; color: #9fb8ad; text-decoration: none; }
+    .footer-links a:hover { color: var(--c-accent-2); }
+    .footer-credit { font-family: var(--mono); font-size: 11px; color: #7d978b; }
 
     .presentation-wrapper {
       display: flex; justify-content: center; align-items: center;
       width: 100%;
     }
     .presentation-wrapper iframe {
-      border: 1px solid var(--c-rule); border-radius: 4px;
+      border: 1px solid var(--c-rule); border-radius: var(--radius); box-shadow: var(--shadow);
+      width: 100%; max-width: 960px; height: auto; aspect-ratio: 16 / 9.4;
     }
 
     @media (max-width: 768px) {
+      nav { padding: 0.75rem 1rem; }
+      .nav-links { display: none; }
+      .hero-left, .hero-right, .section { padding-left: 1rem; padding-right: 1rem; }
+      .hero-title { font-size: 34px; }
+      .paper-card { grid-template-columns: 1fr; gap: 0.75rem; }
+      .paper-viewer object { height: 400px; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
       .hero { grid-template-columns: 1fr; }
       .hero-left { border-right: none; border-bottom: 1px solid var(--c-rule); }
       .modules-grid { grid-template-columns: 1fr; }
@@ -228,7 +284,7 @@
     <a href="#modules">Modules</a>
     <a href="#demo">Demo</a>
     <a href="#presentation">Presentation</a>
-    <a href="#research">Research</a>
+    <a href="#research">Paper</a>
   </div>
   <a class="nav-cta" href="https://github.com/riccardopadoan28/ABIM-SHOWCASE" target="_blank">GitHub ↗</a>
 </nav>
@@ -246,43 +302,42 @@
     </p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Watch demo</button>
+      <a href="#research" class="btn-ghost"><i class="ti ti-file-text" aria-hidden="true"></i>Read the paper</a>
       <a href="https://docs.google.com/presentation/d/1GDKiy7Dta3uinmiv_JggJiorb4EFSWsw/view" class="btn-ghost" target="_blank">Presentation ↗</a>
     </div>
   </div>
   <div class="hero-right">
-    <div class="code-tag">// IfcOpenShell · actual framework code</div>
-    <div class="code-block">
-      <span class="cm"># Create work schedule in IFC</span><br>
-      <span class="ck">work_plan</span> = <span class="cv">ifcopenshell.api</span>.run(<br>
-      &nbsp;&nbsp;<span class="cn">"sequence.add_work_plan"</span>,<br>
-      &nbsp;&nbsp;model, name=<span class="cn">"Construction WP"</span><br>
-      )<br><br>
-      <span class="cm"># Link cost items to geometry</span><br>
-      <span class="ck">cost_item</span> = <span class="cv">ifcopenshell.api</span>.run(<br>
-      &nbsp;&nbsp;<span class="cn">"cost.add_cost_item"</span>,<br>
-      &nbsp;&nbsp;model, cost_schedule=schedule<br>
-      )<br><br>
-      <span class="ck">control</span>.<span class="cv">assign_control</span>(<br>
-      &nbsp;&nbsp;model, relating_control=<span class="ck">cost_item</span>,<br>
-      &nbsp;&nbsp;related_object=<span class="ck">ifc_element</span><br>
-      )<br><br>
-      <span class="cm"># All data lives in the .ifc file ✓</span>
-    </div>
+    <div class="code-tag">// enriched .ifc output · test model (paper, Table 2)</div>
+<pre class="code-block"><span class="cm">/* 4D · scheduling */</span>
+<span class="ck">#78807</span>=<span class="cv">IFCWORKPLAN</span>(…, <span class="cn">'Construction WorkPlan'</span>, …, .PLANNED.);
+<span class="ck">#78829</span>=<span class="cv">IFCTASK</span>(…, <span class="cn">'B_00 Slab'</span>, <span class="cn">'B_00 Slab Construction'</span>, …);
+<span class="ck">#79005</span>=<span class="cv">IFCRELSEQUENCE</span>(…, #78829, #78833, $, .FINISH_START., $);
+
+<span class="cm">/* 5D · cost */</span>
+<span class="ck">#79009</span>=<span class="cv">IFCCOSTITEM</span>(…, <span class="cn">'Betonbjælke 200x300mm'</span>, …);
+<span class="ck">#79012</span>=<span class="cv">IFCCOSTVALUE</span>(<span class="cn">'Materials'</span>, $, IFCMONETARYMEASURE(4056.05), …);
+<span class="ck">#79020</span>=<span class="cv">IFCCOSTVALUE</span>(<span class="cn">'Labor'</span>, …, IFCMONETARYMEASURE(15113.7383), …);
+
+<span class="cm">/* resources */</span>
+<span class="ck">#79753</span>=<span class="cv">IFCCREWRESOURCE</span>(…, <span class="cn">'Crew Resource for Task B_00 Slab'</span>, …);
+<span class="ck">#79754</span>=<span class="cv">IFCRESOURCETIME</span>($, $, $, <span class="cn">'PT15H6M37S'</span>, …);
+
+<span class="cm">/* all data lives in the .ifc file ✓ */</span></pre>
   </div>
 </div>
 
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">7</div>
-    <div class="stat-label">IFC domains integrated</div>
+    <div class="stat-label">Key concepts, one framework</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">4D+5D</div>
     <div class="stat-label">Scheduling + cost in one pipeline</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">EC³</div>
-    <div class="stat-label">Peer-reviewed · Corfu 2026</div>
+    <div class="stat-num">1 006</div>
+    <div class="stat-label">Elements mapped to price list (test model)</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">100%</div>
@@ -309,7 +364,7 @@
       <div class="module-desc">Automated compliance checks. Non-compliant elements exported as .bcfzip.</div>
     </div>
     <div class="module-card">
-      <i class="ti ti-chart-gantt module-icon" aria-hidden="true"></i>
+      <i class="ti ti-timeline module-icon" aria-hidden="true"></i>
       <div class="module-name">4D Scheduling</div>
       <div class="module-ifc">IfcWorkPlan · IfcTask · IfcRelSequence</div>
       <div class="module-desc">CPM + PERT analysis written programmatically into the IFC schema.</div>
@@ -386,14 +441,14 @@
     <h2 class="section-title">Presentation</h2>
   </div>
   <div class="presentation-wrapper">
-    <iframe src="https://docs.google.com/presentation/d/1GDKiy7Dta3uinmiv_JggJiorb4EFSWsw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="80%" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <iframe title="ÅBIM presentation" src="https://docs.google.com/presentation/d/1GDKiy7Dta3uinmiv_JggJiorb4EFSWsw/embed?start=false&loop=false&delayms=3000" frameborder="0" loading="lazy" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
   </div>
 </div>
 
 <div class="section" id="research">
   <div class="section-header">
     <span class="section-num">04</span>
-    <h2 class="section-title">Research Contribution</h2>
+    <h2 class="section-title">Paper</h2>
   </div>
   <div class="paper-card">
     <div class="paper-badge">EC³ 2026</div>
@@ -401,6 +456,11 @@
       <div class="paper-title">Project Management with IFC: Toward an Open-BIM Framework</div>
       <div class="paper-authors">Padoan R., Pinti L., Karlshøj J. — University of Trento, Technical University of Denmark</div>
       <div class="paper-venue">European Conference on Computing in Construction · Corfu, Greece · July 12–15, 2026</div>
+      <div class="paper-actions">
+        <a class="btn-primary" href="paper/285_PROJECT_MANAGEMENT_WITH_IFC_TOWARD_AN_OPEN_BIM_FRAMEWORK_EC3.pdf" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Open PDF</a>
+        <a class="btn-ghost" href="paper/285_PROJECT_MANAGEMENT_WITH_IFC_TOWARD_AN_OPEN_BIM_FRAMEWORK_EC3.pdf" download><i class="ti ti-download" aria-hidden="true"></i>Download</a>
+        <button class="btn-ghost" onclick="navigator.clipboard.writeText(document.getElementById('cite').innerText).then(()=>this.lastChild.textContent='Copied ✓')"><i class="ti ti-quote" aria-hidden="true"></i><span>Copy citation</span></button>
+      </div>
     </div>
   </div>
   <div style="margin-top: 1.25rem;">
@@ -408,6 +468,15 @@
       <div class="gap-label">Abstract</div>
       <div class="gap-text">Successful construction management relies on interoperability, cost estimation, and scheduling. Current practices suffer from fragmented processes and data loss, due to proprietary silos and lack of automation. This research proposes a computational framework to optimize 4D and 5D BIM workflows by enriching the IFC schema. Through IfcOpenShell, the methodology provides semantic validation via IDS and collaboration via BCF, facilitating extraction of properties and quantities, scheduling, cost estimation, and resource allocation. Results indicate that an integrated OpenBIM framework using IFC as the primary source improves reliability. The contribution is a reproducible, open-source framework providing a methodology for multi-dimensional BIM management.</div>
     </div>
+    <div class="gap-card">
+      <div class="gap-label">Cite</div>
+      <div class="gap-text" id="cite">Padoan, R., Pinti, L. and Karlshøj, J. (2026). Project Management with IFC: Toward an Open-BIM Framework. 2026 European Conference on Computing in Construction (EC³), Corfu, Greece, July 12–15, 2026.</div>
+    </div>
+  </div>
+  <div class="paper-viewer">
+    <object data="paper/285_PROJECT_MANAGEMENT_WITH_IFC_TOWARD_AN_OPEN_BIM_FRAMEWORK_EC3.pdf#view=FitH" type="application/pdf" aria-label="EC³ 2026 paper">
+      <p class="paper-fallback">Your browser can't show the PDF here. <a href="paper/285_PROJECT_MANAGEMENT_WITH_IFC_TOWARD_AN_OPEN_BIM_FRAMEWORK_EC3.pdf" target="_blank">Open the paper ↗</a></p>
+    </object>
   </div>
 </div>
 
